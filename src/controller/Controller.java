@@ -78,7 +78,6 @@ public class Controller implements Command{
     // TODO
     /*
     *
-    * Make selects safe against injections && complete them with where
     * Create UI
     *
     */

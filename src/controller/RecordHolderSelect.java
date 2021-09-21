@@ -49,18 +49,27 @@ public class RecordHolderSelect implements Command{
 
     @Override
     public void execute() {
-        final String QUERY = "select athletes.a_name, min(events.e_time) as time" +
-                "from athletes inner join events on athletes.a_id = events.e_athlete " +
-                "where events.e_sport = '400';";
-
         try {
-            getConnector().connect();
-            ResultSet rs = getConnector().getStatement().executeQuery(QUERY);
-            // Extract data from result set
-            while (rs.next()) {
-                // Retrieve by column name
-//                System.out.println(rs.getString("a_name") + " with time: " + rs.getDouble("time"));
-                this.results.add(rs.getString("a_name") + " with time: " + rs.getDouble("time"));
+            if (getGender().equals("male") || getGender().equals("female")){
+                String QUERY = "select athletes.a_name, min(events.e_time) as time" +
+                        "from athletes inner join events on athletes.a_id = events.e_athlete " +
+                        "where events.e_sport = '" + getDistance() + "' and athletes.a_sex = '" +
+                        getGender() + "';";
+                getConnector().connect();
+                ResultSet rs = getConnector().getStatement().executeQuery(QUERY);
+                while (rs.next()) {
+                    this.results.add(rs.getString("a_name") + " with time: " + rs.getDouble("time"));
+                }
+            }
+            else {
+                String QUERY = "select athletes.a_name, min(events.e_time) as time" +
+                        "from athletes inner join events on athletes.a_id = events.e_athlete " +
+                        "where events.e_sport = '" + getDistance() + "';";
+                getConnector().connect();
+                ResultSet rs = getConnector().getStatement().executeQuery(QUERY);
+                while (rs.next()) {
+                    this.results.add(rs.getString("a_name") + " with time: " + rs.getDouble("time"));
+                }
             }
         }
         catch (SQLException e) {
