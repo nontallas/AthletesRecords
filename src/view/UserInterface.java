@@ -1,5 +1,7 @@
 package view;
 
+import controller.Controller;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +17,15 @@ public class UserInterface {
     private JTextPane textPane1;
     private JButton search;
     private JLabel title;
+    private Controller controller;
+
+    public Controller getController() {
+        return controller;
+    }
+
+    public void setController(Controller controller) {
+        this.controller = controller;
+    }
 
     public UserInterface() {
         search.addActionListener(new ActionListener() {
@@ -22,8 +33,57 @@ public class UserInterface {
             public void actionPerformed(ActionEvent e) {
                 if ((top5.isSelected() || personalBest.isSelected() || recordHolder.isSelected()) &&
                         (mixed.isSelected() || women.isSelected() || men.isSelected())) {
-                    textPane1.setText("hello\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhello");
-                    textPane1.setCaretPosition(0);
+                    if (top5.isSelected()){
+                        if (women.isSelected()){
+                            getController().setGender("female");
+                            getController().setQueryType("top5");
+                            // TODO add code and btns for the sports
+                        }
+                        else if (men.isSelected()){
+                            getController().setGender("male");
+                            getController().setQueryType("top5");
+                            // TODO add code and btns for the sports
+                        }
+                        else {
+                            getController().setGender(" ");
+                            getController().setQueryType("top5");
+                            // TODO add code and btns for the sports
+                        }
+                    }
+                    else if (personalBest.isSelected()){
+                        if (women.isSelected()){
+                            getController().setGender("female");
+                            getController().setQueryType("pb");
+                            // TODO add code and btns for the sports
+                        }
+                        else if (men.isSelected()){
+                            getController().setGender("male");
+                            getController().setQueryType("pb");
+                            // TODO add code and btns for the sports
+                        }
+                        else {
+                            getController().setGender(" ");
+                            getController().setQueryType("pb");
+                            // TODO add code and btns for the sports
+                        }
+                    }
+                    else {
+                        if (women.isSelected()){
+                            getController().setGender("female");
+                            getController().setQueryType("record");
+                            // TODO add code and btns for the sports
+                        }
+                        else if (men.isSelected()){
+                            getController().setGender("male");
+                            getController().setQueryType("record");
+                            // TODO add code and btns for the sports
+                        }
+                        else {
+                            getController().setGender(" ");
+                            getController().setQueryType("record");
+                            // TODO add code and btns for the sports
+                        }
+                    }
                 }
                 else {
                     textPane1.setText("Please click two of the radio buttons, one in each triplet");
@@ -76,10 +136,12 @@ public class UserInterface {
     }
 
     public static void main(String[] args) {
+        UserInterface userInterface = new UserInterface();
         JFrame frame = new JFrame("UserInterface");
         frame.setContentPane(new UserInterface().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        userInterface.setController(new Controller());
     }
 }
