@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="view.UserInterface">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="8" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="9" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="1080" height="720"/>
@@ -86,7 +86,7 @@
       </component>
       <component id="5595d" class="javax.swing.JButton" binding="search">
         <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <label value="Show results"/>
@@ -107,17 +107,17 @@
       </component>
       <vspacer id="260bc">
         <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <vspacer id="5da63">
         <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <hspacer id="87fd3">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="50" height="-1"/>
             <preferred-size width="50" height="-1"/>
             <maximum-size width="50" height="-1"/>
@@ -126,7 +126,7 @@
       </hspacer>
       <hspacer id="4398d">
         <constraints>
-          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="50" height="-1"/>
             <preferred-size width="50" height="-1"/>
             <maximum-size width="50" height="-1"/>
@@ -140,7 +140,7 @@
       </vspacer>
       <scrollpane id="96689">
         <constraints>
-          <grid row="6" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="7" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <minimum-size width="700" height="300"/>
             <preferred-size width="700" height="300"/>
             <maximum-size width="700" height="300"/>
@@ -162,6 +162,36 @@
           </component>
         </children>
       </scrollpane>
+      <component id="8c324" class="javax.swing.JRadioButton" binding="d100">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-52"/>
+          <foreground color="-13158601"/>
+          <text value="100 meters"/>
+        </properties>
+      </component>
+      <component id="fe29c" class="javax.swing.JRadioButton" binding="d200">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-52"/>
+          <foreground color="-13158601"/>
+          <text value="200 meters"/>
+        </properties>
+      </component>
+      <component id="7fa06" class="javax.swing.JRadioButton" binding="d400">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-52"/>
+          <foreground color="-13158601"/>
+          <text value="400 meters"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

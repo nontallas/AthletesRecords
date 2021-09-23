@@ -17,6 +17,9 @@ public class UserInterface {
     private JTextPane textPane1;
     private JButton search;
     private JLabel title;
+    private JRadioButton d100;
+    private JRadioButton d200;
+    private JRadioButton d400;
     private Controller controller;
 
     public Controller getController() {
@@ -32,61 +35,13 @@ public class UserInterface {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if ((top5.isSelected() || personalBest.isSelected() || recordHolder.isSelected()) &&
-                        (mixed.isSelected() || women.isSelected() || men.isSelected())) {
-                    if (top5.isSelected()){
-                        if (women.isSelected()){
-                            getController().setGender("female");
-                            getController().setQueryType("top5");
-                            // TODO add code and btns for the sports
-                        }
-                        else if (men.isSelected()){
-                            getController().setGender("male");
-                            getController().setQueryType("top5");
-                            // TODO add code and btns for the sports
-                        }
-                        else {
-                            getController().setGender(" ");
-                            getController().setQueryType("top5");
-                            // TODO add code and btns for the sports
-                        }
-                    }
-                    else if (personalBest.isSelected()){
-                        if (women.isSelected()){
-                            getController().setGender("female");
-                            getController().setQueryType("pb");
-                            // TODO add code and btns for the sports
-                        }
-                        else if (men.isSelected()){
-                            getController().setGender("male");
-                            getController().setQueryType("pb");
-                            // TODO add code and btns for the sports
-                        }
-                        else {
-                            getController().setGender(" ");
-                            getController().setQueryType("pb");
-                            // TODO add code and btns for the sports
-                        }
-                    }
-                    else {
-                        if (women.isSelected()){
-                            getController().setGender("female");
-                            getController().setQueryType("record");
-                            // TODO add code and btns for the sports
-                        }
-                        else if (men.isSelected()){
-                            getController().setGender("male");
-                            getController().setQueryType("record");
-                            // TODO add code and btns for the sports
-                        }
-                        else {
-                            getController().setGender(" ");
-                            getController().setQueryType("record");
-                            // TODO add code and btns for the sports
-                        }
-                    }
+                        (mixed.isSelected() || women.isSelected() || men.isSelected()) &&
+                        (d100.isSelected() || d200.isSelected() || d400.isSelected())) {
+                    getController().execute();
+                    textPane1.setText(getController().concat());
                 }
                 else {
-                    textPane1.setText("Please click two of the radio buttons, one in each triplet");
+                    textPane1.setText("Please choose three of the radio buttons, one in each triplet");
 
                 }
             }
@@ -96,6 +51,7 @@ public class UserInterface {
             public void actionPerformed(ActionEvent e) {
                 recordHolder.setSelected(false);
                 personalBest.setSelected(false);
+                getController().setQueryType("top5");
             }
         });
         recordHolder.addActionListener(new ActionListener() {
@@ -103,6 +59,7 @@ public class UserInterface {
             public void actionPerformed(ActionEvent e) {
                 top5.setSelected(false);
                 personalBest.setSelected(false);
+                getController().setQueryType("record");
             }
         });
         personalBest.addActionListener(new ActionListener() {
@@ -110,6 +67,7 @@ public class UserInterface {
             public void actionPerformed(ActionEvent e) {
                 top5.setSelected(false);
                 recordHolder.setSelected(false);
+                getController().setQueryType("pb");
             }
         });
         mixed.addActionListener(new ActionListener() {
@@ -117,6 +75,7 @@ public class UserInterface {
             public void actionPerformed(ActionEvent e) {
                 women.setSelected(false);
                 men.setSelected(false);
+                getController().setGender(" ");
             }
         });
         women.addActionListener(new ActionListener() {
@@ -124,6 +83,7 @@ public class UserInterface {
             public void actionPerformed(ActionEvent e) {
                 mixed.setSelected(false);
                 men.setSelected(false);
+                getController().setGender("female");
             }
         });
         men.addActionListener(new ActionListener() {
@@ -131,6 +91,31 @@ public class UserInterface {
             public void actionPerformed(ActionEvent e) {
                 mixed.setSelected(false);
                 women.setSelected(false);
+                getController().setGender("male");
+            }
+        });
+        d100.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                d200.setSelected(false);
+                d400.setSelected(false);
+                getController().setSport("100");
+            }
+        });
+        d200.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                d400.setSelected(false);
+                d100.setSelected(false);
+                getController().setSport("200");
+            }
+        });
+        d400.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                d100.setSelected(false);
+                d200.setSelected(false);
+                getController().setSport("400");
             }
         });
     }
