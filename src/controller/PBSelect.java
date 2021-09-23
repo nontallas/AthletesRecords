@@ -60,7 +60,7 @@ public class PBSelect implements Command{
 
         try {
             if (getGender().equals("male") || getGender().equals("female")){
-                String QUERY = "select athletes.a_name, min(events.e_time) as time" +
+                String QUERY = "select athletes.a_name, min(events.e_time) as time " +
                         "from athletes inner join events on athletes.a_id = events.e_athlete " +
                         "where events.e_sport = '" + getDistance() + "' and athletes.a_sex = '" +
                         getGender() + "' "+ getCONDITIONS();
@@ -71,7 +71,7 @@ public class PBSelect implements Command{
                 }
             }
             else {
-                String QUERY = "select athletes.a_name, min(events.e_time) as time" +
+                String QUERY = "select athletes.a_name, min(events.e_time) as time " +
                         "from athletes inner join events on athletes.a_id = events.e_athlete " +
                         "where events.e_sport = '" + getDistance() + "' " + getCONDITIONS();
                 getConnector().connect();
@@ -86,14 +86,3 @@ public class PBSelect implements Command{
         }
     }
 }
-
-/*
-    * final String PB = "select athletes.a_name, min(events.e_time) as time " +
-                "from athletes inner join events on athletes.a_id = events.e_athlete group by athletes.a_name";
-    * final String Top5 = "select athletes.a_name, min(events.e_time) as time" +
-                "from athletes inner join events on athletes.a_id = events.e_athlete " +
-                "where events.e_sport = '400' group by athletes.a_name order by events.e_time limit 5;";
-    * final String RecordHolder = "select athletes.a_name, min(events.e_time) as time" +
-                "from athletes inner join events on athletes.a_id = events.e_athlete " +
-                "where events.e_sport = '400';";
-* */

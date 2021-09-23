@@ -31,6 +31,8 @@ public class UserInterface {
     }
 
     public UserInterface() {
+        setController(new Controller());
+        textPane1.setEditable(false);
         search.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,6 +41,7 @@ public class UserInterface {
                         (d100.isSelected() || d200.isSelected() || d400.isSelected())) {
                     getController().execute();
                     textPane1.setText(getController().concat());
+                    textPane1.setCaretPosition(0);
                 }
                 else {
                     textPane1.setText("Please choose three of the radio buttons, one in each triplet");
@@ -121,12 +124,10 @@ public class UserInterface {
     }
 
     public static void main(String[] args) {
-        UserInterface userInterface = new UserInterface();
         JFrame frame = new JFrame("UserInterface");
         frame.setContentPane(new UserInterface().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        userInterface.setController(new Controller());
     }
 }

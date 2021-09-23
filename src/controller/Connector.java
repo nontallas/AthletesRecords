@@ -51,21 +51,4 @@ public class Connector {
             e.printStackTrace();
         }
     }
-    /*
-    try {
-        Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-        System.out.println("connected");
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(QUERY);
-        // Extract data from result set
-        while (rs.next()) {
-            // Retrieve by column name
-            this.results.add(rs.getString("a_name") + " with time: " + rs.getDouble("pb"));
-        }
-    }
-        catch (
-    SQLException e) {
-        e.printStackTrace();
-    }
-    */
 }
