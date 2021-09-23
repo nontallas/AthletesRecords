@@ -17,3 +17,5 @@ The DB contains data from various timed events of athletes, and someone can acce
 ![search](/images/search.PNG)
 
 ![invalid input](/images/wrong_input.PNG)
+
+![schema](/images/schema.PNG)
