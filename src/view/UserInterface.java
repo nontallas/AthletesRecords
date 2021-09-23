@@ -45,7 +45,6 @@ public class UserInterface {
                 }
                 else {
                     textPane1.setText("Please choose three of the radio buttons, one in each triplet");
-
                 }
             }
         });

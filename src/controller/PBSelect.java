@@ -54,10 +54,6 @@ public class PBSelect implements Command{
 
     @Override
     public void execute() {
-
-
-
-
         try {
             if (getGender().equals("male") || getGender().equals("female")){
                 String QUERY = "select athletes.a_name, min(events.e_time) as time " +

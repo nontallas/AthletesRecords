@@ -75,12 +75,6 @@ public class Controller implements Command{
         this.results = results;
     }
 
-    // TODO
-    /*
-    *
-    * Create UI
-    *
-    */
     @Override
     public void execute() {
         switch (getQueryType()){
