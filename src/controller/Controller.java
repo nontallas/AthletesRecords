@@ -13,7 +13,6 @@ public class Controller implements Command{
     private RecordHolderSelect recordHolderSelect;
 
     public Controller() {
-        super();
         setTop5Select(new Top5Select());
         setPbSelect(new PBSelect());
         setRecordHolderSelect(new RecordHolderSelect());

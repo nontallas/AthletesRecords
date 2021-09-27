@@ -12,7 +12,6 @@ public class RecordHolderSelect implements Command{
 
 
     public RecordHolderSelect(){
-        super();
     }
 
     public Queue<String> getResults() {

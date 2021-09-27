@@ -13,7 +13,6 @@ public class PBSelect implements Command{
 
 
     public PBSelect(){
-        super();
     }
 
     public Queue<String> getResults() {

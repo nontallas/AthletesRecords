@@ -13,7 +13,6 @@ public class Top5Select implements Command{
 
 
     public Top5Select(){
-        super();
     }
 
     public Queue<String> getResults() {

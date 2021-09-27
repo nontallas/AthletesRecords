@@ -10,7 +10,6 @@ public class Connector {
     private Statement statement;
 
     public Connector(){
-        super();
     }
 
     public String getDB_URL() {
